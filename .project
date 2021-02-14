@@ -1,0 +1,22 @@
+{
+  "file_info": {
+    "version": 1,
+    "kind": "project_metadata"
+  },
+  "installed_on": "2020-10-26T22:10:59.163133708+07:00",
+  "updated_on": "0001-01-01T00:00:00Z",
+  "project_url": "https://github.com/tyleretters/arcologies",
+  "catalog_entry": {
+    "project_name": "arcologies",
+    "project_url": "https://github.com/tyleretters/arcologies",
+    "author": "@tyleretters",
+    "description": "an interactive environment for designing 2d sound arcologies with norns and grid",
+    "discussion_url": "https://l.llllllll.co/arcologies",
+    "tags": [
+      "grid",
+      "sequencer",
+      "generator"
+    ],
+    "origin": "lines"
+  }
+}

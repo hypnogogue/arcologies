@@ -1,4 +1,5 @@
 _grid = {}
+local grid = include "midigrid/lib/mg_128"
 _grid.device = grid.connect()
 
 function _grid.init()

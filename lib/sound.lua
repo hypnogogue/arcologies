@@ -111,8 +111,9 @@ function sound:get_reasonable_note()
   return root_notes[math.floor(#root_notes / 2)]
 end
 
-function sound:play(note, velocity)
+function sound:play(note, velocity,pan)
   engine.amp(velocity / 127)
+  engine.pan(pan)
   engine.hz(musicutil.note_num_to_freq(self:snap_note(self:transpose_note(note))))
 end
 

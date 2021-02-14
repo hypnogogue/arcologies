@@ -39,11 +39,11 @@ function keeper:collision(signal, cell)
 
   -- crypts play samples
   elseif cell:is("CRYPT") then
-    _softcut:one_shot(cell.state_index, cell.level / 100)
+    _softcut:one_shot(cell.state_index, cell.level / 100, cell.pan /-100)
 
   -- shrines play single notes via sc
   elseif cell:is("SHRINE") then
-    sound:play(cell.notes[1], cell.velocity)
+    sound:play(cell.notes[1], cell.velocity, cell.pan /-100)
 
   -- uxbs play single notes via midi
   elseif cell:is("UXB") then
@@ -64,7 +64,7 @@ function keeper:collision(signal, cell)
   -- topiaries cylce through notes
   elseif cell:is("TOPIARY") then
     cell:over_cycle_state_index(cell:topography_operation())
-    sound:play(cell.notes[cell.state_index], cell.velocity)
+    sound:play(cell.notes[cell.state_index], cell.velocity, cell.pan/-100)
 
   -- topiaries cylce through notes
   elseif cell:is("CASINO") then
@@ -84,7 +84,7 @@ function keeper:collision(signal, cell)
   elseif cell:is("VALE") then
     local random_note = sound:get_random_note(cell.range_min / 100, cell.range_max / 100)
     if cell:get_output_string() == "SYNTH" then
-      sound:play(random_note, cell.velocity)
+      sound:play(random_note, cell.velocity, cell.pan/-100)
     elseif cell:get_output_string() == "MIDI" then
       _midi:play(random_note, cell.velocity, cell.channel, cell.duration, cell.device)
     end
@@ -93,7 +93,7 @@ function keeper:collision(signal, cell)
   elseif cell:is("FRACTURE") then
     local random_velocity = util.linlin(0, 100, 0, 127, math.random(cell.range_min, cell.range_max))
     if cell:get_output_string() == "SYNTH" then
-      sound:play(cell.notes[1], random_velocity)
+      sound:play(cell.notes[1], random_velocity, cell.pan/-100)
     elseif cell:get_output_string() == "MIDI" then
       _midi:play(cell.notes[1], random_velocity, cell.channel, cell.duration, cell.device)
     end

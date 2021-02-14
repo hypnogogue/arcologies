@@ -66,7 +66,7 @@ function _softcut:crypt_load(index)
   self:crypt_table()
 end
 
-function _softcut:one_shot(index, level)
+function _softcut:one_shot(index, level, pan)
   local voice = index -- voices are hard-coupled for now
   if tonumber(index) then -- some edge cases were happening where nil indexes were coming in
     softcut.buffer(voice, 2)
@@ -76,6 +76,7 @@ function _softcut:one_shot(index, level)
     softcut.loop_start(voice, self.clip[index].min)
     softcut.loop_end(voice, self.clip[index].max)
     softcut.loop(voice, 0)
+    softcut.pan(voice, pan)
     softcut.play(voice, 1)
   end
 end

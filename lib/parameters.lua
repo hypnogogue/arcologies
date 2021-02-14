@@ -87,6 +87,8 @@ function parameters.init()
   }
   params:set_action("note_range_max", function(x) params:set("note_range_min", util.clamp(params:get("note_range_min"), 0, x)) end)
 
+include('/norniths/lib/engine_norniths_params')
+
   params:add_separator("")
   params:add_separator("ARC BINDINGS")
 

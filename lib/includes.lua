@@ -5,8 +5,8 @@ fileselect = require("fileselect")
 musicutil = require("musicutil")
 textentry = require("textentry")
 tabutil = require("tabutil")
-engine.name = "PolyPerc"
-
+--engine.name = "PolyPerc"
+engine.name = "Nornith" --PolyPerc extended with extra osc shapes, 2nd osc, and attack param
 
 local lib = "arcologies/lib/"
 
@@ -65,7 +65,8 @@ local mixins = {
   "territory_mixin",
   "topography_mixin",
   "turing_mixin",
-  "velocity_mixin"
+  "velocity_mixin",
+  "pan_mixin"
 }
 for k, v in pairs(mixins) do
   include(lib .. "mixins/" .. v)
