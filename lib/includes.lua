@@ -151,3 +151,6 @@ if dev ~= nil then
   io.close(dev)
   include(lib .. "dev")
 end
+
+-- upload/download
+sharer = include('lib/sharer')

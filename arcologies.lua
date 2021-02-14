@@ -6,11 +6,12 @@
 --    k2: play      k3: delete
 --
 --
--- v1.2.4
+-- v1.2.7
 
 include("arcologies/lib/includes")
 
 function init()
+  sharer.init()
   audio:pitch_off()
   structures.init()
   filesystem.init()
